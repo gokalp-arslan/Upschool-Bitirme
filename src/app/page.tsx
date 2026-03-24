@@ -93,16 +93,15 @@ export default function Home() {
         ) : null}
 
         <section className="mb-12 rounded-2xl border border-slate-200/60 bg-white/80 p-8 shadow-sm backdrop-blur sm:p-10">
-          <p className="text-sm font-medium uppercase tracking-widest text-indigo-600/90">
-            Hoş geldiniz
-          </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Kariyer yolculuğunuzu tek yerden yönetin
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Hoş geldiniz.
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
-            Profil, CV, staj ve eğitim süreçlerinize hızlı erişim. Kartlara tıklayarak
-            ilgili modüle geçin — giriş yapmanız gerekiyorsa otomatik olarak giriş
-            sayfasına yönlendirilirsiniz.
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600">
+            Öğrenciler arasındaki yardımlaşma platformuna hoş geldiniz. Paylaşımcı ve
+            etkileşimli bu platform tam size göre. Profil, CV, staj ve eğitim
+            süreçlerinize hızlı erişim. Kartlara tıklayarak ilgili modüle geçin —
+            giriş yapmanız gerekiyorsa otomatik olarak giriş sayfasına
+            yönlendirilirsiniz.
           </p>
         </section>
 

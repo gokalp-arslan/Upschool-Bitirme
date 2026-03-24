@@ -68,11 +68,12 @@ export default function AuthForm({ mode }: AuthFormProps) {
           return;
         }
 
-        router.push("/profil-tamamlama");
+        router.refresh();
+        router.push("/");
         return;
       }
 
-      const { error: signUpError } = await client.auth.signUp({
+      const { data: signUpData, error: signUpError } = await client.auth.signUp({
         email,
         password
       });
@@ -82,8 +83,14 @@ export default function AuthForm({ mode }: AuthFormProps) {
         return;
       }
 
+      if (signUpData.session) {
+        router.refresh();
+        router.push("/");
+        return;
+      }
+
       setSuccessMessage(
-        "Kayit basarili. E-posta dogrulama gerekiyorsa lutfen gelen kutunu kontrol et."
+        "Kayit basarili. E-posta dogrulama gerekiyorsa lutfen gelen kutunu kontrol et. Onaydan sonra giris yaparak panele donebilirsin."
       );
     } catch {
       setErrorMessage(
@@ -99,8 +106,8 @@ export default function AuthForm({ mode }: AuthFormProps) {
       <h1 className="text-2xl font-semibold text-slate-900">{ctaText}</h1>
       <p className="mt-2 text-sm text-slate-600">
         {isLogin
-          ? "Hesabina giris yaparak profilini tamamlamaya devam edebilirsin."
-          : "Yeni hesap olustur ve kariyer yolculugunu baslat."}
+          ? "Hesabina giris yaptiktan sonra ana ekrandan tum modullere ulasabilirsin."
+          : "Yeni hesap olustur; onay sonrasi ana ekrana yonlendirilirsin."}
       </p>
 
       <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
